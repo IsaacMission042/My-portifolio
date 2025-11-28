@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url(../image/alex-shuper-iUy-W6TL7yw-unsplash.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5%;
+      height: 100vh;
+      color: white;
+      font-family: Arial, sans-serif;
+      backdrop-filter: blur(4px);
+      opacity: 1;
+      transition: opacity 1s ease;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .welcome {
+      height: 400px;
+      width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: 30px;
+      text-align: center;
+      animation: slideUp 1s ease-out;
+    }
+
+    .welcome h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .welcome h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .welcome p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      width: 80%;
+      animation: fadeIn 1.4s ease-out;
+    }
+
+    .welcome button {
+      padding: 10px 20px;
+      font-size: 18px;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .welcome button:hover {
+      background-color: #0056b3;
+      border-radius: 10px 30px 30px 10px;
+      padding: 15px 25px;
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    body img {
+      border-radius: 10px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease, border-radius 0.5s ease;
+      animation: fadeIn 1s ease-out;
+      height: 400px;
+      width: 600px;
+    }
+
+    body img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0px 10px 10px #fffdfdf9;
+      border-radius: 100px 0px 100px 0px;
+    }
+
+    .welcome button a {
+      text-decoration: none;
+      color: white;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media(max-width: 1024px) {
+      body {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        gap: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .welcome {
+        width: 90%;
+      }
+
+      body img {
+        width: 90%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <img src="../image/tyler-clemmensen-Zs_L-plsZzg-unsplash.jpg" alt="Profile Picture">
+  <div class="welcome">
+    <h1>Hi, I'm Irolewe Laughter</h1>
+    <h3>Web Developer | Designer | Student</h3>
+    <p>
+      Welcome to my portfolio! I'm passionate about creating beautiful and functional web experiences.
+      Explore my skills and projects below to learn more about what I can do.
+    </p>
+    <button type="submit"><a href="index.html" target="_blank">Get Started</a></button>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+.peace{
+    @apply text-[18px] text-start pb-6
+}
+
+.no{
+    @apply text-start pb-10 text-gray-800
+}

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isaac Mission Auto Motors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #f5f5f5, #ffcccc);
+      color: #000;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: url(./bugatti\ wallpaper\ 12\ [vikitech].jpg) center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.6s ease;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    header>* {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
+      margin-bottom: 20px;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 1s forwards 0.5s;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeUp 1s forwards 0.8s;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.95);
+      text-decoration: none;
+      font-size: 1.4rem;
+      padding: 12px 28px;
+      border-radius: 50px;
+      background: rgba(0, 0, 255, 0.3);
+      backdrop-filter: blur(5px);
+      transition: all 0.4s ease;
+      transform: translateY(0);
+    }
+
+    nav a:hover {
+      background: blue;
+      color: white;
+      transform: translateY(-8px) scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 255, 0.4);
+    }
+
+    main {
+      padding: 60px 20px;
+      background: linear-gradient(250deg, #00eeff, #8c8b8b);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1,
+    h2 {
+      color: #000080;
+      margin-bottom: 25px;
+      font-size: 2.4rem;
+      text-align: center;
+    }
+
+    .design1 {
+      font-family: "Trebuchet MS", sans-serif;
+      font-weight: bold;
+      font-size: 2.6rem;
+    }
+
+    .design2 {
+      font-family: "Courier New", monospace;
+      font-weight: 900;
+      color: #000080;
+    }
+
+    .maybach {
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      margin-bottom: 50px;
+      transition: all 0.6s ease;
+      transform: translateY(30px);
+    }
+
+    .maybach:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .maybach img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.6s ease;
+    }
+
+    .maybach:hover img {
+      transform: scale(1.08);
+    }
+
+    .maybachcar {
+      padding: 40px 25px;
+      text-align: center;
+    }
+
+    .maybachcar img {
+      width: 100px;
+      height: auto;
+      border: 7px dashed #44441f;
+      border-radius: 25px;
+      margin-bottom: 25px;
+      transition: all 0.5s ease;
+    }
+
+    .maybachcar:hover img {
+      transform: rotate(10deg) scale(1.2);
+      border-color: #000080;
+    }
+
+    .maybachcar h1 {
+      font-size: 2rem;
+      margin: 20px 0;
+      color: #000080;
+      transition: all 0.4s;
+    }
+
+    .maybachcar:hover h1 {
+      transform: scale(1.1);
+    }
+
+    .maybachcar p {
+      font-size: 1.15rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      nav a {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+      }
+
+      .design1 {
+        font-size: 2rem;
+      }
+
+      h1,
+      h2 {
+        font-size: 2rem;
+      }
+
+      .maybachcar h1 {
+        font-size: 1.8rem;
+      }
+
+      .maybachcar p {
+        font-size: 1.05rem;
+      }
+
+      .maybachcar img {
+        width: 80px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 70px 15px;
+      }
+
+      header h1 {
+        font-size: 1.9rem;
+      }
+
+      nav ul {
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 1.1rem;
+        padding: 10px 18px;
+      }
+    }
+
+    footer {
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 50px;
+    }
+
+    footer h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #00eeff;
+    }
+
+    @keyframes fadeUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Select">Car Garage</a>
+        <a href="#contact">Contact Us</a>
+      </ul>
+    </nav>
+    <h1>Welcome To Isaac Mission Auto Motors</h1>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <section id="Home">
+        <h1>Welcome to our <span class="design1">Isaac Auto Motors</span></h1>
+        <p style="max-width:900px; margin:25px auto; font-size:1.2rem;">
+          At <span class="design1">Isaac Auto Motors</span>, we connect with
+          cars that fit your needs, style, and budget. From sleek sedans to
+          powerful SUVs, our vehicles are fully inspected, affordable, and ready
+          to hit the road. With transparent pricing, flexible payment options,
+          and friendly service, we make car buying easy and stress-free. Visit
+          us today or explore our collection online—your dream car is just a
+          click away!
+        </p>
+      </section>
+
+      <section id="About">
+        <h1>About</h1>
+        <p style="max-width:900px; margin:25px auto; font-size:1.2rem;">
+          At <span class="design2">Isaac Mission</span>, we are passionate about
+          helping people find the right car—one that fits their needs,
+          lifestyle, and budget. Based on a foundation of honesty, quality, and
+          customer satisfaction, we have built a reputation for providing clean,
+          reliable, and affordable vehicles to drivers across the nation.
+        </p>
+      </section>
+
+      <section id="Select">
+        <div class="maybach">
+          <img src="./image/maybach1.jpg" alt="Maybach">
+          <div class="maybachcar">
+            <img src="./image/maybach logo.jpg" alt="Maybach Logo">
+            <h1>Maybach</h1>
+            <p>Every detail is designed for comfort and elegance - from premium leather seating and cutting-edge
+              infotainment to powerful, yet refined engines that make every drive effortless.</p>
+            <p>We bring you exclusive access to Maybach models giving you the chance to own a vehicle that turns heads
+              and elevtes your driving experience.</p>
+            <p>Drive luxury. Drive Maybach. Drive with <span class="design2">Isaac Mission</span></p>
+          </div>
+        </div>
+
+        <div class="maybach">
+          <img src="./image/lexus 1.jpg" alt="Lexus">
+          <div class="maybachcar">
+            <img src="./image/lexus logo.jpg" alt="Lexus Logo">
+            <h1>Lexus</h1>
+            <p>At Isaac Mission, we bring you a wide selection of new and pre-owned Lexus models, giving you access to
+              vehicles that combine prestige, performance, and peace of mind.</p>
+            <p>Renowned for its sleek design, powerful performance, and top-notch comfort, Lexus offers a driving
+              experience that's smooth, safe, and stylish.</p>
+            <p>Drive sophistication. Drive Lexus. Drive with <span class="design2">Isaac Mission</span></p>
+          </div>
+        </div>
+
+        <div class="maybach">
+          <img src="./image/mercedes 1.jpg" alt="Mercedes">
+          <div class="maybachcar">
+            <img src="./image/mercedes logo.jpg" alt="Mercedes Logo">
+            <h1>Mercedes</h1>
+            <p>Step into the world of luxury, performance, and innovation with Mercedes-Benz. Known for its iconic
+              design, advanced technology, and unmatched driving comfort, every Mercedes-Benz is built to make a
+              statement on the road.</p>
+            <p>We offer a selection of new and pre-owned Mercedes-Benz vehicles, giving you the chance to own a car that
+              combines prestige, performance, and reliabilty.</p>
+            <p>Drive excellence. Drive Mercedes-Benz. Drive with <span class="design2">Isaac Mission</span></p>
+          </div>
+        </div>
+
+        <div class="maybach">
+          <img src="./image/bmw 1.jpg" alt="BMW">
+          <div class="maybachcar">
+            <img src="./image/bmw logo.jpg" alt="BMW Logo">
+            <h1>BMW</h1>
+            <p>From luxirous interiors ans advanced infotainment systems to powerful engines and dynamic performance,
+              every BMW is designed to deliver a driving experience like no other.</p>
+            <p>Renowned for its precision engineering, sporty handling, and innovative technology, BMW offers vehicles
+              that are thrilling to dive as they are to look at</p>
+            <p>Drive excellence. Drive BMW. Drive with <span class="design2">Isaac Mission</span></p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <h3>Contact Us</h3>
+    <p>Location: Nigeria</p>
+    <p>Phone: +234 703 332 7515</p>
+    <p>Email: laughterirolewe@gmail.com</p>
+    <p>&copy; 2025 Isaac Mission Auto Motors. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll('section');
+      const options = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, options);
+      sections.forEach(sec => observer.observe(sec));
+    });
+  </script>
+</body>
+
+</html>

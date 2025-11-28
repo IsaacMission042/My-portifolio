@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WatchLux - Premium Watches (Animated)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-36px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(36px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pop {
+      from {
+        transform: translateY(6px) scale(.99);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .45s ease, transform .45s ease;
+    }
+
+    .reveal--fade {
+      animation: fadeUp .8s ease forwards;
+    }
+
+    .reveal--left {
+      animation: slideInLeft .72s cubic-bezier(.2, .9, .2, 1) forwards;
+    }
+
+    .reveal--right {
+      animation: slideInRight .72s cubic-bezier(.2, .9, .2, 1) forwards;
+    }
+
+    .reveal--pop {
+      animation: pop .6s cubic-bezier(.2, .9, .2, 1) forwards;
+    }
+
+    .img-hover {
+      transition: transform .6s ease, box-shadow .45s ease, border-radius .45s ease;
+      will-change: transform;
+    }
+
+    .img-hover:hover {
+      transform: scale(1.06);
+      box-shadow: 0 20px 40px rgba(2, 6, 23, 0.18);
+      border-radius: 1rem;
+    }
+
+    .card-hover {
+      transition: transform .45s ease, box-shadow .45s ease, background-color .3s ease;
+      will-change: transform;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(2, 6, 23, 0.14);
+    }
+
+    .btn-ghost {
+      transition: transform .35s ease, background-color .25s ease, box-shadow .25s ease;
+      will-change: transform;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(20, 35, 70, 0.12);
+    }
+
+    .mobile-menu {
+      transition: max-height .35s ease, opacity .25s ease;
+      overflow: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 768px) {
+      .hero-gap {
+        gap: 1.5rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 animate-slideDown">
+    <div class="flex justify-between items-center py-4 px-6 md:px-16">
+      <h1 class="text-2xl font-bold cursor-pointer transition-transform duration-300 hover:scale-110">Watch<span
+          class="text-indigo-600">Lux</span></h1>
+      <nav class="hidden md:flex gap-8 font-medium text-gray-700">
+        <a href="#home" class="hover:text-indigo-600 hover:scale-110 transition-transform">Home</a>
+        <a href="#collection" class="hover:text-indigo-600 hover:scale-110 transition-transform">Collections</a>
+        <a href="#about" class="hover:text-indigo-600 hover:scale-110 transition-transform">About</a>
+        <a href="#contact" class="hover:text-indigo-600 hover:scale-110 transition-transform">Contact</a>
+      </nav>
+      <button id="menu-btn" aria-label="Toggle menu"
+        class="md:hidden text-2xl focus:outline-none hover:scale-125 transition-transform">
+        ☰
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden flex-col bg-white text-gray-800 md:hidden shadow-md border-t mobile-menu">
+      <a href="#home" class="py-3 px-6 border-b hover:bg-gray-100 hover:text-indigo-600 transition">Home</a>
+      <a href="#collection"
+        class="py-3 px-6 border-b hover:bg-gray-100 hover:text-indigo-600 transition">Collections</a>
+      <a href="#about" class="py-3 px-6 border-b hover:bg-gray-100 hover:text-indigo-600 transition">About</a>
+      <a href="#contact" class="py-3 px-6 hover:bg-gray-100 hover:text-indigo-600 transition">Contact</a>
+    </nav>
+  </header>
+  <section id="home" class="flex flex-col md:flex-row items-center hero-gap gap-10 px-6 md:px-16 py-36 pt-32">
+    <div class="flex-1 space-y-6 reveal reveal--left" data-reveal>
+      <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
+        Premium <span class="text-indigo-600">Watches</span><br />For Every Moment
+      </h2>
+      <p class="text-gray-600 md:text-lg">Timeless elegance crafted with precision. Wear confidence on your wrist.</p>
+      <a href="#collection"
+        class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 text-lg rounded-lg shadow-lg btn-ghost reveal reveal--pop"
+        data-reveal>
+        Shop Now
+      </a>
+    </div>
+    <div class="flex-1 reveal reveal--right" data-reveal>
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="hero watch"
+        class="w-full rounded-2xl shadow-lg img-hover" />
+    </div>
+  </section>
+  <section id="collection" class="px-6 md:px-16 py-16 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-10 reveal reveal--fade" data-reveal>Best Sellers</h3>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md card-hover reveal reveal--fade" data-reveal>
+        <img src="https://images.unsplash.com/photo-1518544881673-0f5d5a1a5e8f"
+          class="w-full rounded-md mb-6 img-hover" />
+        <h4 class="font-semibold text-lg mb-2">Classic Silver</h4>
+        <p class="text-gray-600 mb-3">A perfect blend of class and style.</p>
+        <button class="text-indigo-600 font-semibold hover:underline">View Details →</button>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md card-hover reveal reveal--fade" data-reveal>
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="w-full rounded-md mb-6 img-hover" />
+        <h4 class="font-semibold text-lg mb-2">Golden Prestige</h4>
+        <p class="text-gray-600 mb-3">Elevate your look with luxury.</p>
+        <button class="text-indigo-600 font-semibold hover:underline">View Details →</button>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md card-hover reveal reveal--fade" data-reveal>
+        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3"
+          class="w-full rounded-md mb-6 img-hover" />
+        <h4 class="font-semibold text-lg mb-2">Black Masterpiece</h4>
+        <p class="text-gray-600 mb-3">Bold, stylish and durable.</p>
+        <button class="text-indigo-600 font-semibold hover:underline">View Details →</button>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="px-6 md:px-16 py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center reveal reveal--fade" data-reveal>
+      <h3 class="text-3xl font-bold mb-4">About WatchLux</h3>
+      <p class="text-gray-600 leading-relaxed">At WatchLux, we craft watches that define luxury and timeless
+        performance. Our mission is to offer premium designs that reflect elegance and confidence in every moment of
+        your life.</p>
+    </div>
+  </section>
+  <section id="contact" class="px-6 md:px-16 py-16 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-6 reveal reveal--left" data-reveal>Get in Touch</h3>
+    <form class="max-w-xl mx-auto space-y-4 reveal reveal--fade" data-reveal>
+      <input class="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" type="text"
+        placeholder="Your Name" required>
+      <input class="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" type="email"
+        placeholder="Your Email" required>
+      <textarea class="w-full border p-3 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+        placeholder="Message"></textarea>
+      <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg btn-ghost">Send
+        Message</button>
+    </form>
+  </section>
+  <footer class="bg-gray-900 text-gray-300 text-center py-6 mt-10">
+    <p>© 2025 WatchLux. All Rights Reserved.</p>
+  </footer>
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn && btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    (function () {
+      const options = { threshold: 0.14 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          el.classList.remove('reveal');
+          const delay = el.datasetDelay || 0;
+          setTimeout(() => {
+            if (el.classList.contains('reveal--left')) el.classList.add('reveal--left');
+            if (el.classList.contains('reveal--right')) el.classList.add('reveal--right');
+            if (el.classList.contains('reveal--fade')) el.classList.add('reveal--fade');
+            if (el.classList.contains('reveal--pop')) el.classList.add('reveal--pop');
+            observer.unobserve(el);
+          }, delay);
+        });
+      }, options);
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        if (!el.classList.contains('reveal--left') && !el.classList.contains('reveal--right') &&
+          !el.classList.contains('reveal--fade') && !el.classList.contains('reveal--pop')) {
+          el.classList.add('reveal--fade');
+        }
+        el.classList.add('reveal');
+        observer.observe(el);
+      });
+    })();
+  </script>
+  <style>
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slideDown {
+      animation: slideDown 0.6s ease-out;
+    }
+  </style>
+</body>
+
+</html>

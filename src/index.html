@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .animate-slideUp {
+      animation: slideUp 1s ease-out;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-[url('../image/life-s-captured-sparks-omBEgDTkzLw-unsplash.jpg')] bg-cover bg-center bg-no-repeat min-h-screen">
+  <header class="bg-blue-900 text-white sticky top-0 z-50">
+    <div class="flex flex-row justify-between items-center px-5 py-5 flex-wrap">
+      <div>
+        <h1 class="text-3xl tracking-widest font-serif font-bold">Laughter</h1>
+      </div>
+      <nav class="w-full hidden lg:w-auto mt-2 lg:mt-0 md:">
+        <ul class="flex flex-col lg:flex-row gap-3 lg:gap-6 text-[18px] tracking-tight items-center">
+          <li><a href="#home" class="hover:text-yellow-300 transition-colors duration-300">Home</a></li>
+          <li><a href="#about" class="hover:text-yellow-300 transition-colors duration-300">About</a></li>
+          <li><a href="#projects" class="hover:text-yellow-300 transition-colors duration-300">Project</a></li>
+          <li><a href="#contact" class="hover:text-yellow-300 transition-colors duration-300">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="space-y-16">
+    <section id="home" class="flex flex-col lg:flex-row justify-center items-center mt-9 gap-5 px-4 lg:px-0">
+      <div
+        class="flex flex-col justify-center items-center bg-white w-full lg:w-[700px] opacity-75 leading-6 p-8 rounded-lg animate-slideUp">
+        <p class="font-serif text-2xl lg:text-3xl tracking-tight mb-6 animate-fadeIn text-center lg:text-left">
+          FOR WEB DESIGN <br />AND WEB DEVELOPMENT
+        </p>
+        <h1 class="font-bold text-2xl lg:text-4xl font-monospace mb-9 animate-fadeIn text-center lg:text-left">
+          Welcome to <span class="font-serif">Laughter Portfolio</span>
+        </h1>
+        <button
+          class="bg-yellow-300 px-6 py-3 rounded-2xl hover:bg-yellow-800 hover:text-white hover:scale-105 transition-all duration-500">
+          <a href="#about" class="text-[18px]">SEE MORE ABOUT ME</a>
+        </button>
+      </div>
+      <img src="../image/lee-campbell-DtDlVpy-vvQ-unsplash.jpg" alt=""
+        class="w-full lg:w-[600px] rounded-lg lg:rounded-r-[200px] transition-transform duration-500 hover:scale-105 hover:brightness-110 animate-fadeIn" />
+    </section>
+    <section id="about"
+      class="flex flex-col-reverse lg:flex-row justify-center items-center mt-9 gap-5 px-4 lg:px-0 text-center lg:text-left">
+      <img src="../image/WhatsApp Image 2025-11-26 at 21.29.20_e24ef154.jpg" alt=""
+        class="w-full md:h-200 lg:w-60 rounded-lg lg:rounded-l-[200px] transition-transform duration-500 hover:scale-105 hover:brightness-110 animate-fadeIn" />
+
+      <span class="text-5xl bg-white border-white border-r-4 hidden lg:block animate-fadeIn"><i
+          class="bi bi-arrow-right-square-fill"></i></span>
+      <div
+        class="text-white flex flex-col justify-center items-center bg-black opacity-70 p-8 lg:p-10 w-full lg:w-[600px] rounded-lg animate-slideUp">
+        <h1 class="text-2xl lg:text-3xl font-bold font-serif tracking-widest mb-7 animate-fadeIn">About Me</h1>
+        <div class="leading-7 animate-fadeIn space-y-3">
+          <p>
+            Hi! I’m a passionate Web Designer & Web Developer who loves
+            bringing ideas to life on the internet. I create websites that
+            don’t just look beautiful, they work beautifully too. My mission
+            is to design digital experiences that feel smooth, engaging, and
+            meaningful for every user.
+          </p>
+          <p>
+            When I’m working on a project, I give it my full attention. I aim
+            not just to meet expectations but to exceed them—crafting websites
+            that are fast, responsive, and user-friendly. I love solving
+            challenges and turning ideas into finished products that clients
+            and users can be proud of.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="projects"
+      class="text-white bg-gray-500 flex md:py-5 flex-col justify-center items-center mt-9 space-y-10 px-4 lg:px-0">
+      <h1 class="text-3xl font-bold text-white bg-gray-500 p-7 rounded-2xl animate-fadeIn">My Projects</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+        <div
+          class="flex flex-col justify-center items-center hover:bg-white hover:opacity-75 hover:text-black p-5 transition-transform duration-500 gap-5 rounded-lg animate-slideUp">
+          <img src="../image/prithiviraj-a-vDlt9BQND-o-unsplash.jpg" alt=""
+            class="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-500" />
+          <p class="text-center md:text-left">
+            A clean, modern, and fully responsive restaurant website designed
+            to showcase delicious meals and help customers easily explore the
+            menu and place orders online.
+          </p>
+          <div class="flex items-center gap-3">
+            <span><i class="bi bi-fork-knife"></i></span>
+            <button
+              class="bg-black p-3 text-white rounded-2xl flex justify-center items-center hover:scale-105 transition-transform duration-300">
+              <a href="./tailwind css/index.html" target="_blank">Explore</a>
+            </button>
+            <span><i class="bi bi-fork-knife"></i></span>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center hover:bg-white hover:opacity-75 hover:text-black p-5 transition-transform duration-500 gap-5 rounded-lg animate-slideUp">
+          <img src="../image/peter-broomfield-m3m-lnR90uM-unsplash - Copy.jpg" alt=""
+            class="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-500" />
+          <p class="text-center md:text-left">
+            A modern and responsive landing page designed to showcase a
+            featured car with bold visuals and clear details to attract buyers and highlight what makes the vehicle
+            stand out.
+          </p>
+          <div class="flex items-center gap-3">
+            <span><i class="bi bi-car-front"></i></span>
+            <button
+              class="bg-black p-3 text-white rounded-2xl flex justify-center items-center hover:scale-105 transition-transform duration-300">
+              <a href="grid-practice.html" target="_blank">Explore</a>
+            </button>
+            <span><i class="bi bi-car-front"></i></span>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center hover:bg-white hover:opacity-75 hover:text-black p-5 transition-transform duration-500 gap-5 rounded-lg animate-slideUp">
+          <img src="../image/daniel-korpai-2FGPidtk00E-unsplash.jpg" alt=""
+            class="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-500" />
+          <p class="text-center md:text-left">
+            A stylish, responsive landing page created to showcase premium
+            watches with a clean layout and elegant visuals with a clear
+            call-to-action that encourages customers to explore and shop with
+            confidence.
+          </p>
+          <div class="flex items-center gap-3">
+            <span><i class="bi bi-watch"></i></span>
+            <button
+              class="bg-black p-3 text-white rounded-2xl flex justify-center items-center hover:scale-105 transition-transform duration-300">
+              <a href="watch-web.html">Explore</a>
+            </button>
+            <span><i class="bi bi-watch"></i></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="px-4 md:px-16 py-20 flex justify-center items-center">
+      <div class="bg-white shadow-lg rounded-2xl p-8 md:w-1/2 animate-fadeIn">
+        <h2 class="text-3xl font-bold text-center mb-6">Get In Touch</h2>
+        <p class="text-center text-gray-600 mb-8">I'd love to hear from you! Fill out the form below.</p>
+
+        <form class="space-y-5">
+          <div>
+            <label class="block text-sm font-medium mb-1">Your Name</label>
+            <input type="text" placeholder="Enter your name"
+              class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Your Email</label>
+            <input type="email" placeholder="Enter your email"
+              class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Message</label>
+            <textarea placeholder="Write your message..." rows="5"
+              class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"></textarea>
+          </div>
+
+          <button
+            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg shadow-md transition-transform transform hover:-translate-y-1 hover:scale-105">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-900 text-gray-300 py-10 px-6 md:px-16 animate-fadeIn">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
+
+      <div>
+        <h3 class="text-2xl font-bold mb-3 text-white">Laughter <span class="text-indigo-500">Irolewe</span></h3>
+        <p class="text-gray-400">Creative Web Developer & Designer</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-3 text-white">Contact Info</h4>
+        <p class="text-gray-400">📞 07033327515</p>
+        <p class="text-gray-400">📧 laughterirolewe@gmail.com</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-3 text-white">Follow Me</h4>
+        <div class="flex justify-center md:justify-start gap-4 text-xl">
+          <a href="#" class="hover:text-indigo-500 transition-transform hover:scale-125">🌐</a>
+          <a href="#" class="hover:text-indigo-500 transition-transform hover:scale-125">📘</a>
+          <a href="#" class="hover:text-indigo-500 transition-transform hover:scale-125">📸</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-gray-500 mt-6 text-sm">© 2025 Laughter Irolewe — All Rights Reserved</p>
+  </footer>
+
+</body>
+
+</html>
