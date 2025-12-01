@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gourmet au catering</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.8s ease-out both;
+    }
+
+    .hero-img {
+      transition: transform 450ms ease, box-shadow 300ms ease;
+      will-change: transform;
+    }
+
+    .hero-img:hover {
+      transform: scale(1.03);
+    }
+
+    .about-img {
+      transition: transform 450ms ease, box-shadow 350ms ease, border-radius 350ms ease;
+      will-change: transform, box-shadow;
+    }
+
+    .about-img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      border-radius: 18px;
+    }
+
+    .project-card {
+      transition: transform 400ms ease, background-color 300ms ease, border-radius 400ms ease, box-shadow 400ms ease;
+      will-change: transform, border-radius;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-radius: 18px;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-lift {
+      transition: transform 300ms ease, background-color 250ms ease, color 250ms ease;
+    }
+
+    .btn-lift:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-toggle {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      main>* {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .flex-lg-row {
+        flex-direction: column !important;
+        gap: 1.25rem;
+      }
+
+      .w-150 {
+        width: 92% !important;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .h-100 {
+        height: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <header class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <h4 class="tracking-widest pl-2 font-serif text-lg font-semibold">Gourmet au catering</h4>
+
+      <nav class="hidden lg:flex gap-8 items-center text-[15px]">
+        <a href="#Home" class="tracking-widest hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Home</a>
+        <a href="#Menu" class="tracking-widest hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Menu</a>
+        <a href="#Contact" class="tracking-widest hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Contact</a>
+      </nav>
+
+      <button id="navBtn"
+        class="nav-toggle inline-flex lg:hidden items-center justify-center p-2 rounded-md text-gray-700">
+        <svg id="openIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+        </svg>
+        <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileNav" class="hidden lg:hidden bg-white border-t">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#Home" class="px-3 py-2 rounded-md hover:bg-gray-100">Home</a>
+        <a href="#Menu" class="px-3 py-2 rounded-md hover:bg-gray-100">Menu</a>
+        <a href="#Contact" class="px-3 py-2 rounded-md hover:bg-gray-100">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 space-y-12">
+
+    <div class="bg-center bg-cover h-screen flex items-end"
+      style="background-image:url('./image/IMG-20251104-WA0053.jpg');">
+      <div class="w-full max-w-6xl mx-auto flex items-center justify-between px-6 py-12 flex-lg-row fade-up"
+        style="gap: 2rem;">
+        <div
+          class="h-100 flex flex-col justify-center items-center bg-white opacity-90 leading-6 p-8 rounded-lg w-150 drop-shadow-lg">
+          <h1 class="font-bold text-2xl mb-9 fade-up">Welcome to <span class="font-serif">Gourmet au catering</span>
+          </h1>
+          <a href="#about" class="bg-yellow-300 px-4 py-3 rounded-2xl btn-lift inline-block">SEE MORE ABOUT US</a>
+        </div>
+      </div>
+    </div>
+    <section id="about" class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center justify-center gap-6 flex-lg-row fade-up" style="align-items:center;">
+        <img src="./image/IMG-20251104-WA0052(1).jpg" alt="about"
+          class="about-img h-100 w-60 object-cover rounded-md" />
+
+        <span
+          class="text-5xl bg-white border-white border-r-4 hidden lg:inline-flex items-center justify-center px-3 py-3">
+          <i class="bi bi-arrow-right-square-fill"></i>
+        </span>
+
+        <div class="text-white flex-1 flex flex-col justify-center items-start bg-black bg-opacity-70 p-8 rounded-md">
+          <h1 class="text-2xl font-bold font-serif tracking-widest mb-4">About Us</h1>
+          <div class="leading-7">
+            <p class="mb-3">
+              Hi! We’re a passionate catering team who loves bringing ideas to life on the table.
+              We craft menus that don’t just look beautiful; they taste amazing too.
+            </p>
+            <p>
+              When working on an event we give it our full attention — from fresh seasonal ingredients to beautiful
+              presentation.
+              We focus on fast, responsive, and delightful catering experiences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Menu" class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-serif font-bold text-center text-gray-800 mb-6">Our Menu</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article class="project-card bg-gray-50 p-6 rounded-md">
+          <img src="./image/thomas-john-PDVybTEOj7k-unsplash.jpg" alt="menu1"
+            class="w-full h-44 object-cover rounded-md mb-4" />
+          <h3 class="font-semibold">Bread Basket</h3>
+          <p class="text-sm text-gray-600">Assortment of fresh baked breads and muffins — $5.50</p>
+          <div class="mt-4 flex gap-3 items-center">
+            <button class="bg-black text-white px-4 py-2 rounded-2xl btn-lift">Explore</button>
+          </div>
+        </article>
+
+        <article class="project-card bg-gray-50 p-6 rounded-md">
+          <img src="./image/american-heritage-chocolate-HJUae0j54tI-unsplash.jpg" alt="menu2"
+            class="w-full h-44 object-cover rounded-md mb-4" />
+          <h3 class="font-semibold">Honey Almond Granola</h3>
+          <p class="text-sm text-gray-600">Honey toasted oats, raisins, almonds — $7.00</p>
+          <div class="mt-4 flex gap-3 items-center">
+            <button class="bg-black text-white px-4 py-2 rounded-2xl btn-lift">Explore</button>
+          </div>
+        </article>
+
+        <article class="project-card bg-gray-50 p-6 rounded-md">
+          <img src="./image/kevin-woblick-9S6Nw266Bi0-unsplash.jpg" alt="menu3"
+            class="w-full h-44 object-cover rounded-md mb-4" />
+          <h3 class="font-semibold">Belgian Waffle</h3>
+          <p class="text-sm text-gray-600">Vanilla flavored batter with malted flour — $7.50</p>
+          <div class="mt-4 flex gap-3 items-center">
+            <button class="bg-black text-white px-4 py-2 rounded-2xl btn-lift">Explore</button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="Contact" class="max-w-4xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-serif font-bold mb-6">Contact</h2>
+      <p class="mb-6">
+        We offer full-service for any event, large or small. Contact us: <strong>Catering Service, 42nd Living st, 43043
+          New York, NY</strong>
+      </p>
+
+      <form class="space-y-4 bg-white p-6 rounded-md shadow-sm">
+        <input type="text" name="Name" id="Name" placeholder="Name" class="w-full h-12 px-4 border rounded-md" required
+          autofocus />
+        <input type="number" name="people" id="people" placeholder="How many people"
+          class="w-full h-12 px-4 border rounded-md" required />
+        <input type="datetime-local" name="date" id="date" class="w-full h-12 px-4 border rounded-md" required />
+        <input type="text" name="order" id="order" placeholder="Message / Special requirements"
+          class="w-full h-12 px-4 border rounded-md" />
+        <div class="text-right">
+          <button type="submit" class="bg-gray-800 text-white px-6 py-3 rounded-md btn-lift">SEND MESSAGE</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="mt-12">
+    <div class="h-24 flex justify-center items-center bg-gray-100">
+      <p>Powered by Favy Nma</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const navBtn = document.getElementById('navBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const openI = document.getElementById('openIcon');
+    const closeI = document.getElementById('closeIcon');
+
+    navBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      openI.classList.toggle('hidden');
+      closeI.classList.toggle('hidden');
+    });
+  </script>
+</body>
+
+</html>
